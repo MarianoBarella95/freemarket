@@ -20,10 +20,10 @@ const showMenu = () => {
 
     if (navMenu.classList.contains('show-nav-menu')) {
         header.style.boxShadow = ('none')
-        btnToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        btnToggle.innerHTML = '<i class="fa-solid fa-xmark" style="color: #ffffff;"></i>';
     } else {
         header.style.boxShadow = ('0 0 0.5rem rgba(0, 0, 0, 0.5)');
-        btnToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        btnToggle.innerHTML = '<i class="fa-solid fa-bars" style="color: #ffffff;"></i>';
     }
     
     if (cartMenu.classList.contains('show-cart')) {
