@@ -380,7 +380,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(img/hero-3d-img-5.png);
+    background-image: url(img/hero-3d-img-2.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -846,6 +846,8 @@ footer {
         background-color: transparent;
         border: none;
         cursor: pointer;
+        background-color: #54A8FC;
+        border-radius: 100%;
     }
 
     .nav-menu {
@@ -891,14 +893,17 @@ footer {
 
     .section-hero {
         min-height: 60rem;
+        width: 100%;
 
 
         & .title-container {
             padding: 1rem 0;
             height: 50%;
+            width: 80%;
 
             & .hero-title {
                 font-size: 2.25rem;
+                text-transform: uppercase;
             }
 
             & .hero-subtitle {
@@ -926,9 +931,11 @@ footer {
         min-height: 60rem;
         background-color: #0466c8;
         flex-direction: column-reverse;
+        width: 100%;
 
         & .about-us-text {
             height: 50%;
+            width: 100%;
 
             & .about-us-title {
                 color: #fbfbfb;
@@ -937,6 +944,8 @@ footer {
 
             & .about-us-p {
                 color: #cccccc;
+                width: 80%;
+                font-size: 1.25rem;
             }
         }
 
@@ -1059,6 +1068,15 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+    .section-hero {
+        
+        & .title-container {
+            width: 100%;
+            
+        }
+    }
+
+
     .about-us-text {
         
         & .about-us-p {
