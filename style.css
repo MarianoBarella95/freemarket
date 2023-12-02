@@ -439,7 +439,7 @@ main {
         font-size: 1.5rem;
         font-weight: 400;
         text-align: center;
-        color: #cccccc;
+        color: #495057;
         text-wrap: balance;
     }
 
@@ -886,11 +886,12 @@ footer {
     /* Estilos del Hero Section */
 
     .section-hero {
-        grid-template-columns: 1fr;
-        grid-template-rows: 50vh 1fr;
+        min-height: 60rem;
+
 
         & .title-container {
             padding: 1rem 0;
+            height: 50%;
 
             & .hero-title {
                 font-size: 2.25rem;
@@ -909,12 +910,7 @@ footer {
 
         & .hero-main-img {
             width: 100%;
-            height: 80%;
-
-            & img {
-                width: 80%;
-                height: 80%;
-            }
+            height: 50%;
         }
 
 
@@ -934,6 +930,10 @@ footer {
             & .about-us-title {
                 color: #fbfbfb;
                 font-size: 3rem;
+            }
+
+            & .about-us-p {
+                color: #cccccc;
             }
         }
 
