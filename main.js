@@ -23,7 +23,7 @@ const showMenu = () => {
         btnToggle.innerHTML = '<i class="fa-solid fa-xmark" style="color: #ffffff;"></i>';
     } else {
         header.style.boxShadow = ('0 0 0.5rem rgba(0, 0, 0, 0.5)');
-        btnToggle.innerHTML = '<i class="fa-solid fa-bars" style="color: #ffffff;"></i>';
+        btnToggle.innerHTML = '<i class="fa-solid fa-bars" style="color: #ffffff";></i>';
     }
     
     if (cartMenu.classList.contains('show-cart')) {
