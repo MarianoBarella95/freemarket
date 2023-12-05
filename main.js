@@ -1,18 +1,22 @@
+import { cartInit } from "./cart.js";
+import { productInit } from "./products.js";
+
 const btnToggle = document.querySelector('.btn-toggle-menu');
 const navMenu = document.querySelector('.nav-menu');
 const header = document.querySelector('header');
-const productsContainer = document.querySelector('.products-container');
-const loadMoreBtn = document.querySelector('.load-more-btn');
-const filterContainer = document.querySelector('.filter-container');
-const categoriesList = document.querySelectorAll('.filter-btn');
-const btnCart = document.querySelector('.btn-cart');
-const cartMenu = document.querySelector('.cart');
-const productsCart = document.querySelector('.cart-content');
-const total = document.querySelector('.total');
-const cartBubbleQuantity = document.querySelector('.cart-quantity');
-const btnClearCart = document.querySelector('.btn-clear-cart');
-const btnBuy = document.querySelector('.btn-buy');
-const modal = document.querySelector('.modal');
+// const productsContainer = document.querySelector('.products-container');
+// const loadMoreBtn = document.querySelector('.load-more-btn');
+// const filterContainer = document.querySelector('.filter-container');
+// const categoriesList = document.querySelectorAll('.filter-btn');
+// const btnCart = document.querySelector('.btn-cart');
+// const cartMenu = document.querySelector('.cart');
+// const productsCart = document.querySelector('.cart-content');
+// const total = document.querySelector('.total');
+// const cartBubbleQuantity = document.querySelector('.cart-quantity');
+// const btnClearCart = document.querySelector('.btn-clear-cart');
+// const btnBuy = document.querySelector('.btn-buy');
+// const modal = document.querySelector('.modal');
+const form = document.querySelector('.form-container');
 
 // Menú Toggle
 const showMenu = () => {
@@ -53,7 +57,7 @@ const guardarCarrito = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-const crearPlantillaProducto = (product) => {
+/*const crearPlantillaProducto = (product) => {
     const {id, name, price, img, category} = product;
     return `
     <div class="product">
@@ -145,7 +149,7 @@ const renderizarProductosFiltrados = () => {
         return product.category === appState.activeFilter
     })
     renderizarProductos(productosFiltrados);
-}
+}*/
 
 // FUNCIONES RELATIVAS AL CARRITO
 
@@ -173,30 +177,6 @@ const renderizarCarrito = () => {
     productsCart.innerHTML = cart.map(createCartProductTemplate).join('');
 }
 
-/*const renderizarCarrito = () => {
-    if (!cart.length) {
-        productsCart.innerHTML = `<p>'Your cart is empty</p>`;
-        return;
-    }
-    productsCart.innerHTML = cart.map((product) => {
-        return `
-            <div class="cart-product">
-                <img class="cart-product-img" src="${product.img}" alt="">
-                <div class="cart-product-info">
-                    <h3 class="cart-product-title">${product.name}</h3>
-                    <span class="cart-product-price">$${product.price}</span>
-                </div>
-                <button class="cart-product-remove-btn" data-id="${product.id}">Remove</button>`
-    })
-}*/
-
-
-/*const mostrarTotalCarrito = () => {
-    const total = cart.reduce((acc, product) => {
-        return acc + product.price;
-    }, 0);
-    total.textContent = `$${total}`;
-}*/
 const obtenerTotal = () => {
     return cart.reduce((acc, cur) => {
         console.log('Price:', cur.price);
@@ -289,7 +269,7 @@ const manejarCantidades = (e) => {
     }
     actualizarCarrito();
 }
-btnUpEvent = (id) => {
+const btnUpEvent = (id) => {
     const existingProduct = cart.find((product) => product.id === id);
     añadirUnidad(existingProduct);
     actualizarCarrito();    
@@ -337,13 +317,29 @@ const vaciarCarrito = () => {
     completarAccion('Are you sure you want to clear the cart?', 'Cart cleared!');
 }
 
+// VALIDACION DEL FORMULARIO
+
+const formValidation = (e) => {
+    e.preventDefault();
+    if (form.checkValidity()) {
+        window.alert('Your message has been sent');
+        form.reset();
+    } else {
+        form.reportValidity();
+        window.alert('Please complete the required fields');
+    }
+}
+
+
 // Función Init
 const init = () => {
-    renderizarProductos(appState.products[0]);
-    loadMoreBtn.addEventListener('click', loadMoreProducts);
-    filterContainer.addEventListener('click', applyFilter);
+    // renderizarProductos(appState.products[0]);
+    // loadMoreBtn.addEventListener('click', loadMoreProducts);
+    // filterContainer.addEventListener('click', applyFilter);
+    productInit();
+    cartInit();
+    /*productsContainer.addEventListener('click', anadirProducto);
     btnCart.addEventListener('click', (showCart));
-    productsContainer.addEventListener('click', anadirProducto);
     document.addEventListener('DOMContentLoaded', renderizarCarrito);
     document.addEventListener('DOMContentLoaded', mostrarTotalCarrito);
     renderizarBubble();
@@ -351,7 +347,8 @@ const init = () => {
     desabilitarBtn(btnBuy);
     productsCart.addEventListener('click', manejarCantidades);
     btnBuy.addEventListener('click', completarCompra)
-    btnClearCart.addEventListener('click', vaciarCarrito);
+    btnClearCart.addEventListener('click', vaciarCarrito);*/
+    form.addEventListener('submit', formValidation)
 
 };
 

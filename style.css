@@ -334,7 +334,7 @@ main {
         font-family: 'Heebo', sans-serif;
 
         & span {
-            color: #0466c8;
+            color: #54A8FC;
         }
         
     }
@@ -660,7 +660,7 @@ main {
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        background-color: #0466c8;
+        background-color: #54A8FC;
         border-bottom-left-radius: 1rem;
         border-top-left-radius: 1rem;
         flex: 1 1 0;
@@ -679,7 +679,7 @@ main {
             font-size: 1.5rem;
             font-weight: 400;
             text-align: center;
-            color: #cccccc;
+            color: #495057;
             text-wrap: balance;
             height: max-content;
 
@@ -710,7 +710,7 @@ main {
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
         
-        & input {
+        & #name, #mail {
             outline: none;
             border: none;
             border-bottom: 1px solid black;
@@ -718,7 +718,7 @@ main {
             background: transparent;
         }
 
-        & textarea {
+        & #message {
             width: 100%;
             min-height: 2rem;
             resize: none;
@@ -748,7 +748,7 @@ main {
             cursor: pointer;
             font-size: 1rem;
             font-weight: 500;
-            background-color: white;
+            background-color: #EBEBEB;
 
         }
         
@@ -832,289 +832,3 @@ footer {
     }
 }
 
-@media screen and (max-width: 768px) {
-    
-    /* Estilos del Header */
-
-    .btn-toggle-menu {
-        width: 3rem;
-        height: 3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        background-color: #54A8FC;
-        border-radius: 100%;
-    }
-
-    .nav-menu {
-        display: none;
-    }
-
-
-    .show-nav-menu {
-        padding: 1rem 0;
-        top: 5rem;
-        left: 0;
-        position: absolute;
-        width: 100%;
-        height: 12rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 1fr);
-        background-color: white;
-        align-items: center;
-        justify-items: center;
-        padding: 1rem;
-        gap: 1rem;
-        box-shadow: 0px 15px 10px -15px #111;
-        animation: nav-menu-animation 0.5s ease-in-out forwards;
-    
-        & .nav-link {
-            color: #0466c8;
-            width: max-content;
-            border-bottom: 1px solid #0466c8;
-        }
-    
-    }
-
-    .show-cart {
-        width: 100%;
-    }
-
-
-    /* Estilos del Main */
-
-
-    /* Estilos del Hero Section */
-
-    .section-hero {
-        min-height: 60rem;
-        width: 100%;
-
-
-        & .title-container {
-            padding: 1rem 0;
-            height: 50%;
-            width: 80%;
-
-            & .hero-title {
-                font-size: 2.25rem;
-                text-transform: uppercase;
-            }
-
-            & .hero-subtitle {
-                font-size: 1.25rem;
-            }
-
-            & .products-link {
-                font-size: 1rem;
-                width: max-content;
-            }
-        }
-
-
-        & .hero-main-img {
-            width: 100%;
-            height: 50%;
-        }
-
-
-}
-
-    /* ABOUT US SECTION */
-
-    .section-about-us {
-        min-height: 60rem;
-        background-color: #0466c8;
-        flex-direction: column-reverse;
-        width: 100%;
-
-        & .about-us-text {
-            height: 50%;
-            width: 100%;
-
-            & .about-us-title {
-                color: #fbfbfb;
-                font-size: 3rem;
-            }
-
-            & .about-us-p {
-                color: #cccccc;
-                width: 80%;
-                font-size: 1.25rem;
-            }
-        }
-
-        & .about-us-img {
-            height: 50%; 
-            width: 100%;  
-            background-color: transparent;
-
-        }
-
-
-    }   
-
-
-    /* PRODUCTS SECTION */
-
-
-    .section-products {
-
-        & .section-products-title-container {
-        
-            & .section-products-title {
-                font-size: 3rem;
-                width: 100%;
-                text-align: center;
-            }
-        
-            & hr {
-                display: none;
-            }
-        }
-
-        & .products-container {
-            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-        }
-    }
-
-
-    /* CONTACT SECTION */
-
-
-    .section-contact {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
-        width: 100%;
-        margin-bottom: 1rem;
-        padding: 1rem;
-        
-        & .form-text-container {
-            border-top-right-radius: 1rem;
-            border-bottom-left-radius: 0;
-
-            
-            & .contact-title {
-                font-size: 2rem;
-            }
-
-            & .contact-p {
-                font-size: 1rem;
-            }
-
-        }
-
-        & .form-container {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 1rem;
-            border-bottom-left-radius: 1rem;
-            min-height: max-content;
-
-
-            & input {
-                font-size: 1rem;
-            }
-    
-            & textarea {
-                min-height: 1.5rem;
-                font-size: 0.75rem;
-            }
-    
-            & div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-    
-            & label {
-                font-size: 1rem;
-            }
-    
-            & select {
-                width: 30%;
-                height: 2rem;
-                font-size: 0.75rem;
-    
-            }
-            
-            & button {
-                width: 30%;
-                height: 2rem;
-                font-size: 1rem;
-    
-                &:hover {
-                    transform: translate(-0.05em, -0.05em);
-                    box-shadow: 0.15em 0.15em;
-                    background-color: #0062cc;
-                }
-            }
-
-        }
-    }
-    
-        /* FOOTER */
-
-    footer {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 1fr);
-
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .section-hero {
-        
-        & .title-container {
-            width: 100%;
-            
-        }
-    }
-
-
-    .about-us-text {
-        
-        & .about-us-p {
-            font-size: 1rem;
-        }
-    }
-
-    /* .filter-container {
-        width: 80%;
-
-        & .filter-btn {
-            width: 80%;
-            height: 80%;
-            padding: 0;
-        }
-    } */
-
-    .section-products {
-        
-        & .section-products-title-container {
-            width: max-content;
-
-
-            & .section-products-title {
-                font-size: 2rem;
-                text-align: center;
-            }
-
-            & hr {
-                display: none;
-            }
-        }
-    }
-
-    .form-container {
-        
-        & select {
-            font-size: 0.5rem;
-        }
-    }
-}

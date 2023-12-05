@@ -1,4 +1,4 @@
-const ProductsData = [
+export const ProductsData = [
     {
         id: 1,
         name: 'Xiaomi Redmi Buds Essential',
@@ -138,7 +138,7 @@ const dividirProductos = (size) => {
 }
 
 
-const appState = {
+export const appState = {
     products: dividirProductos(6),
     productLimit: dividirProductos(6).length,
     currentProductIndex: 0,
