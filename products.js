@@ -1,5 +1,4 @@
 import { appState, ProductsData } from "./data.js";
-// import { anadirProducto } from "./cart.js";
 
 
 const productsContainer = document.querySelector('.products-container');
