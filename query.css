@@ -1,3 +1,54 @@
+@media screen and (max-width: 1024px) {
+    .nav-menu {
+
+        a {
+            font-size: .8rem;
+        }
+    }
+
+    .section-hero {
+
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+        }
+
+        .products-link {
+            font-size: .75rem;
+        }
+    }
+
+    .section-about-us {
+
+        .about-us-title {
+            font-size: 2.5rem;
+        }
+
+        .about-us-p {
+            font-size: 1rem;
+        }
+    }
+
+    .section-contact {
+
+        .form-text-container {
+            .contact-title {
+                font-size: 2.5rem;
+            }
+    } 
+    }
+
+    .conditions {
+        
+        a {
+            font-size: .8rem;
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     
     /* Estilos del Header */
@@ -281,6 +332,14 @@
         
         & .menu-select {
             font-size: 0.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .section-products {
+        & .products-container {
+            padding: 0;
         }
     }
 }

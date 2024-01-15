@@ -553,11 +553,11 @@ main {
 .products-container {
     width: 100%;
     padding: 1rem 2rem;
-    display: grid;
+    /* display: grid;
     /* grid-template-columns: repeat(3, 1fr); */
-    grid-gap: 20px;
+    /* grid-gap: 20px; */
     /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    place-items: center;
+    /* place-items: center; */ 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
