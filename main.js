@@ -29,16 +29,44 @@ btnToggle.addEventListener('click', (showMenu));
 
 
 
-// VALIDACION DEL FORMULARIO
+// VALIDACION DEL FORMULARIO CORREGIDO
 
 const formValidation = (e) => {
     e.preventDefault();
-    if (form.checkValidity()) {
+
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('mail');
+    const messageInput = document.getElementById('message');
+    const menuSelect = document.getElementById('menu-select');
+
+    // Validar el correo electrónico usando una expresión regular simple
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    let errorMessage = '';
+
+    if (!nameInput.validity.valid) {
+        errorMessage += 'Please enter your name.\n';
+    }
+
+    if (!emailInput.validity.valid) {
+        errorMessage += 'Please enter a valid email address.\n';
+    } else if (!emailRegex.test(emailInput.value)) {
+        errorMessage += 'Please enter a valid email address.\n';
+    }
+
+    if (!menuSelect.validity.valid) {
+        errorMessage += 'Please select a question.\n';
+    }
+
+    if (!messageInput.validity.valid) {
+        errorMessage += 'Please enter your message.\n';
+    }
+
+    if (errorMessage) {
+        window.alert(errorMessage);
+    } else {
         window.alert('Your message has been sent');
         form.reset();
-    } else {
-        form.reportValidity();
-        window.alert('Please complete the required fields');
     }
 }
 

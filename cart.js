@@ -142,20 +142,53 @@ const manejarCantidades = (e) => {
     }
     actualizarCarrito();
 }
+
 const btnUpEvent = (id) => {
     const existingProduct = cart.find((product) => product.id === id);
     añadirUnidad(existingProduct);
     actualizarCarrito();    
 }
 
+
+// CÓDIGO CORRECCIÓN MODAL CONFIRMAR
+
 const btnDownEvent = (id) => {
     const existingProduct = cart.find((product) => product.id === id);
     if(existingProduct.quantity === 1) {
-        removerProductoCarrito(existingProduct);
+        mostrarModalConfirmacion(existingProduct);
         return;
     } 
     sustraerUnidad(existingProduct);
+    actualizarCarrito();
 }
+
+const mostrarModalConfirmacion = (existingProduct) => {
+    let confirmMessage = '';
+
+    if (cart.length === 1) {
+        confirmMessage = 'Are you sure you want to clear the cart?';
+    } else {
+        confirmMessage = `Are you sure you want to remove ${existingProduct.name} from the cart?`;
+    }
+
+    const confirmar = confirm(confirmMessage);
+
+    if (confirmar) {
+        if (cart.length === 1) {
+            // Limpiar el carrito
+            cart = [];
+            alert('Cart cleared!');
+        } else {
+            // Eliminar un producto específico
+            removerProductoCarrito(existingProduct);
+            alert(`Product ${existingProduct.name} removed from the cart.`);
+        }
+
+        actualizarCarrito();
+    }
+}
+
+
 
 
 const sustraerUnidad = (existingProduct) => {
@@ -189,6 +222,7 @@ const completarCompra = () => {
 const vaciarCarrito = () => {
     completarAccion('Are you sure you want to clear the cart?', 'Cart cleared!');
 }
+
 
 export const cartInit = () => {
     productsContainer.addEventListener('click', anadirProducto);

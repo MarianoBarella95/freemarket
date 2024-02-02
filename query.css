@@ -32,6 +32,16 @@
         }
     }
 
+    .section-products {
+        .section-products-title {
+            width: 50%;
+        }
+
+        hr {
+            width: 50%;
+        }
+    }
+
     .section-contact {
 
         .form-text-container {
